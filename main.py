@@ -7,17 +7,14 @@ from lib import write_grid
 
 
 
-def parse_args():
-    """Lire et vérifier les options. Arthur."""
+def parse_args(argv=None):
     """Lit les options de la ligne de commande et renvoie le résultat d'argparse.
-
 
     Options : -n/--nb_cells, -m/--max_iterations, -s/--seed,
     -o/--output_directory, -t/--output_type, -p/--periodic (et -h/--help).
     Vérifier que nb_cells > 0 et max_iterations >= 0.
     """
     parser = argparse.ArgumentParser(description="Jeu de la vie de Conway")
-
 
     parser.add_argument("-n", "--nb_cells", type=int, default=10,
                         help="nombre de cellules par côté pour une grille aléatoire (défaut : 10)")
@@ -32,8 +29,15 @@ def parse_args():
     parser.add_argument("-p", "--periodic", action="store_true",
                         help="active les conditions aux limites périodiques")
 
+    args = parser.parse_args(argv)
 
-    return parser.parse_args()
+    if args.nb_cells <= 0:
+        parser.error("nb_cells doit être strictement positif (> 0)")
+
+    if args.max_iterations < 0:
+        parser.error("max_iterations doit être supérieur ou égal à zéro (>= 0)")
+
+    return args
 
 
 
