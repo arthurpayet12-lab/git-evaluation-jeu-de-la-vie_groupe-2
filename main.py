@@ -39,17 +39,43 @@ def parse_args():
 
 def random_grid(nb_cells, seed):
     """Créer une grille aléatoire reproductible. John-Lucas."""
-    raise NotImplementedError
+    rng = random.Random(seed)
+    return [[rng.randint(0, 1) for _ in range(nb_cells)] for _ in range(nb_cells)]
 
 
 def parse_grid(text):
     """Transformer le texte lu sur STDIN en grille. John-Lucas."""
-    raise NotImplementedError
+     lines = [line.strip() for line in text.strip().splitlines()]
+    if not lines or not lines[0]:
+        raise ValueError("grille vide")
+    try:
+        size = int(lines[0])
+    except ValueError:
+        raise ValueError("la première ligne doit contenir la taille")
+    if size <= 0:
+        raise ValueError("taille invalide")
+    rows = lines[1:]
+    if len(rows) != size:
+        raise ValueError("nombre de lignes incorrect")
+    grid = []
+    for line in rows:
+        tokens = line.split()
+        if len(tokens) != size:
+            raise ValueError("ligne de longueur incorrecte")
+        row = []
+        for token in tokens:
+            if token not in ("0", "1"):
+                raise ValueError(f"valeur invalide : {token}")
+            row.append(int(token))
+        grid.append(row)
+    return grid
 
 
 def initial_grid(args):
     """Grille de STDIN si fournie, sinon aléatoire. John-Lucas."""
-    raise NotImplementedError
+    if not sys.stdin.isatty():
+        return parse_grid(sys.stdin.read())
+    return random_grid(args.nb_cells, args.seed)
 
 
 def count_neighbors(grid, row, col, periodic):
