@@ -120,17 +120,34 @@ def next_generation(grid, periodic):
 
 def grid_to_text(grid, iteration):
     """Mettre une grille au format texte. Rajan."""
-    raise NotImplementedError
+    lines = [f"iteration: {iteration}"]
+    for lignes in grid:
+        lines.append(" ".join(str(cell) for cell in lignes))
+    return "\n".join(lines)
 
 
 def run_text(grid, max_iterations, periodic):
     """Afficher la dernière itération sur STDOUT. Rajan."""
-    raise NotImplementedError
+    current = grid
+    for i in range(max_iterations):
+        current =  next_generation(current, periodic)
+    print(grid_to_text(current, max_iterations))
+
 
 
 def run_images(grid, max_iterations, periodic, directory):
     """Écrire une image PNG par génération. Rajan."""
-    raise NotImplementedError
+    total_images = max_iterations + 1
+    print(f"Generation de {total_images}images in directory {directory}")
+
+    os.makedirs(directory, exist_ok=True)
+
+    current = grid
+    for step in range(total_images):
+        filename = os.path.join(directory, f"grid_{step:04d}.png")
+        write_grid(current, filename)
+        if step < max_iterations:
+            current = next_generation(current, periodic)
 
 
 def main():
