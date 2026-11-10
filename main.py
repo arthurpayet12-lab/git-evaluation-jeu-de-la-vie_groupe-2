@@ -137,7 +137,17 @@ def run_text(grid, max_iterations, periodic):
 
 def run_images(grid, max_iterations, periodic, directory):
     """Écrire une image PNG par génération. Rajan."""
-    raise NotImplementedError
+    total_images = max_iterations + 1
+    print(f"Generation de {total_images}images in directory {directory}")
+
+    os.makedirs(directory, exist_ok=True)
+
+    current = grid
+    for step in range(total_images):
+        filename = os.path.join(directory, f"grid_{step:04d}.png")
+        write_grid(current, filename)
+        if step < max_iterations:
+            current = next_generation(current, periodic)
 
 
 def main():
