@@ -79,12 +79,26 @@ def initial_grid(args):
 
 
 def count_neighbors(grid, row, col, periodic):
-    """Compter les voisines vivantes d'une cellule. Arthur."""
-    raise NotImplementedError
+    """Compter les voisines vivantes d'une cellule. Jeremie."""
+    size = len(grid)
+    total = 0
+    for d_row in (-1, 0, 1):
+        for d_col in (-1, 0, 1):
+            if d_row == 0 and d_col == 0:
+                continue  # la cellule n'est pas sa propre voisine
+            n_row, n_col = row + d_row, col + d_col
+            if periodic:
+                # le modulo fait "ressortir" la voisine du côté opposé
+                n_row %= size
+                n_col %= size
+            elif not (0 <= n_row < size and 0 <= n_col < size):
+                continue  # hors grille : voisine considérée comme morte
+            total += grid[n_row][n_col]
+    return total
 
 
 def next_generation(grid, periodic):
-    """Calculer la génération suivante. Arthur."""
+    """Calculer la génération suivante. Jeremie."""
     raise NotImplementedError
 
 
