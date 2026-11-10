@@ -99,8 +99,20 @@ def count_neighbors(grid, row, col, periodic):
 
 def next_generation(grid, periodic):
     """Calculer la génération suivante. Jeremie."""
-    raise NotImplementedError
-
+    size = len(grid)
+    new_grid = []
+    for row in range(size):
+        new_row = []
+        for col in range(size):
+            neighbors = count_neighbors(grid, row, col, periodic)
+            if grid[row][col] == 1:
+                # une cellule vivante survit avec 2 ou 3 voisines
+                new_row.append(1 if neighbors in (2, 3) else 0)
+            else:
+                # une cellule morte naît avec exactement 3 voisines
+                new_row.append(1 if neighbors == 3 else 0)
+        new_grid.append(new_row)
+    return new_grid
 
 def grid_to_text(grid, iteration):
     """Mettre une grille au format texte. Rajan."""
