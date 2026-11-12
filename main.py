@@ -138,7 +138,7 @@ def run_text(grid, max_iterations, periodic):
 def run_images(grid, max_iterations, periodic, directory):
     """Écrire une image PNG par génération. Rajan."""
     total_images = max_iterations + 1
-    print(f"Generation de {total_images}images in directory {directory}")
+    print(f"Generation of {total_images} images in directory {directory}")
 
     os.makedirs(directory, exist_ok=True)
 
