@@ -49,7 +49,7 @@ def random_grid(nb_cells, seed):
 
 def parse_grid(text):
     """Transformer le texte lu sur STDIN en grille. John-Lucas."""
-     lines = [line.strip() for line in text.strip().splitlines()]
+    lines = [line.strip() for line in text.strip().splitlines()]
     if not lines or not lines[0]:
         raise ValueError("grille vide")
     try:
