@@ -34,7 +34,8 @@ def parse_args():
 
 def random_grid(nb_cells, seed):
     """Créer une grille aléatoire reproductible. John-Lucas."""
-    raise NotImplementedError
+    rng = random.Random(seed)
+    return [[rng.randint(0, 1) for _ in range(nb_cells)] for _ in range(nb_cells)]
 
 
 def parse_grid(text):
