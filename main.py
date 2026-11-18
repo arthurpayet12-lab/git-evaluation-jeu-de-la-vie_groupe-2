@@ -68,7 +68,9 @@ def parse_grid(text):
 
 def initial_grid(args):
     """Grille de STDIN si fournie, sinon aléatoire. John-Lucas."""
-    raise NotImplementedError
+    if not sys.stdin.isatty():
+        return parse_grid(sys.stdin.read())
+    return random_grid(args.nb_cells, args.seed)
 
 
 def count_neighbors(grid, row, col, periodic):
