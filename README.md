@@ -1,0 +1,8 @@
+- **Installation** : Ce qu'il faut faire pour pouvoir lancer votre programme et générer les vidéos. Si des logiciels tiers sont nécessaires, les procédures d'installation doivent être décrites ici ;
+- **Exécution** : Plusieurs exemples d'utilisation de votre programme et les sorties attendues, comme ce qui est fait dans ce document ;
+- **Arguments** : La description des options disponibles sur votre programme ;
+- **Vidéos** : Les liens YouTube vers les deux vidéos publiques à produire :
+  - au moins une vidéo de simulation du jeu de la vie produite avec votre programme `main.py`, à générer et publier à la fin de la partie implémentation du projet. Indiquez les commandes exactes de génération des images et de la vidéo, ainsi que la graine effectivement utilisée ;
+  - une vidéo Gource représentant l'évolution de votre dépôt et reflétant un véritable travail de groupe ;
+- **Auteurs** : La liste des membres du groupe. Vous devez fournir les nom, prénom et numéro étudiant de chaque membre du groupe ;
+- **Liens utiles** : Une liste de ressources en ligne qui vous a été utile pour réaliser ce projet. Cette liste doit être sous la même forme que la section [Liens utiles](#liens-utiles) de ce document.
