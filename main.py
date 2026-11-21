@@ -89,7 +89,7 @@ def count_neighbors(grid, row, col, periodic):
             elif not (0 <= n_row < size and 0 <= n_col < size):
                 continue  # hors grille : voisine considérée comme morte
             total += grid[n_row][n_col]
-        return total
+    return total
 
 
 def next_generation(grid, periodic):
