@@ -143,18 +143,18 @@ def run_images(grid, max_iterations, periodic, directory):
 
 
 def main():
-    nb_cells = 50
+    args = parse_args()
+    try:
+        grid = initial_grid(args)
+    except ValueError as error:
+        print(f"Erreur : {error}", file=sys.stderr)
+        sys.exit(1)
+    if args.output_type == "text":
+        run_text(grid, args.max_iterations, args.periodic)
+    else:
+        run_images(grid, args.max_iterations, args.periodic,
+                   args.output_directory)
 
-    rng = random.Random(4200)
-
-    matrix = [
-        [rng.choice([0, 1]) for _ in range(nb_cells)]
-        for _ in range(nb_cells)
-    ]
-
-    iter = 0
-    filename = f"outputs/grid_{iter:04d}.png"
-    write_grid(matrix=matrix, filename=filename)
 
 if __name__ == "__main__":
     main()
