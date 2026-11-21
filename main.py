@@ -82,14 +82,14 @@ def count_neighbors(grid, row, col, periodic):
             if d_row == 0 and d_col == 0:
                 continue  # la cellule n'est pas sa propre voisine
             n_row, n_col = row + d_row, col + d_col
-        if periodic:
-            # le modulo fait "ressortir" la voisine du côté opposé
-            n_row %= size
-            n_col %= size
-        elif not (0 <= n_row < size and 0 <= n_col < size):
-            continue  # hors grille : voisine considérée comme morte
-        total += grid[n_row][n_col]
-    return total
+            if periodic:
+                # le modulo fait "ressortir" la voisine du côté opposé
+                n_row %= size
+                n_col %= size
+            elif not (0 <= n_row < size and 0 <= n_col < size):
+                continue  # hors grille : voisine considérée comme morte
+            total += grid[n_row][n_col]
+        return total
 
 
 def next_generation(grid, periodic):
