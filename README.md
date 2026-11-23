@@ -81,8 +81,8 @@ Le programme `main.py` accepte plusieurs options en ligne de commande, disponibl
 
 
 ## Vidéos : 
-Les liens YouTube vers les deux vidéos publiques à produire :
-  - au moins une vidéo de simulation du jeu de la vie produite avec votre programme `main.py`, à générer et publier à la fin de la partie implémentation du projet. Indiquez les commandes exactes de génération des images et de la vidéo, ainsi que la graine effectivement utilisée ;
+Les liens YouTube vers les deux vidéos :
+  - [Simulation du jeu de la vie](https://youtu.be/ELl9sex1T-c?si=cgpLcRMOoOI2xNSa)
   - une vidéo Gource représentant l'évolution de votre dépôt et reflétant un véritable travail de groupe ;
 ## Auteurs : 
     - RAVALISON Jeremie  45001523
