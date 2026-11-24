@@ -168,7 +168,7 @@ Le programme `main.py` accepte plusieurs options en ligne de commande, disponibl
 ## Auteurs : 
     - RAVALISON Jeremie  45001523
     - POUNIANDY Rajan  45002281
-    - PAYET Arthur  45003625
+    - PAYET Arthur  45003652
     - BOYER John-Lucas  46008228
     - MAILLOT-CADET Enzo  45001188
 ## Liens utiles
