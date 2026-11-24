@@ -150,10 +150,21 @@ Le programme `main.py` accepte plusieurs options en ligne de commande, disponibl
 
 
 
-## Vidéos : 
-Les liens YouTube vers les deux vidéos :
-  - [Simulation du jeu de la vie](https://youtu.be/ELl9sex1T-c?si=cgpLcRMOoOI2xNSa)
-  - [Jeu de la vie - Gource] (https://youtu.be/B42ykq9RFxI?si=5vQbvno0Wo3IV5PA)
+## Vidéos
+
+- **Simulation du Jeu de la vie (Scénario 5)** : [Voir la simulation sur YouTube](https://youtu.be/ELl9sex1T-c)
+  - Paramètres : grille de 50 cellules par côté, graine : `4200`, 2001 générations, limites fixes.
+  - Commande de génération des images :
+    ```bash
+    python3 main.py --nb_cells 50 --max_iterations 2000 --seed 4200 --output_directory outputs/video-seed-4200
+    ```
+  - Commande d'assemblage de la vidéo :
+    ```bash
+    ffmpeg -y -framerate 20 -start_number 0 -i outputs/video-seed-4200/grid_%04d.png -frames:v 2001 -c:v libx264 -pix_fmt yuv420p -movflags +faststart outputs/video-seed-4200/game-of-life.mp4
+    ```
+- **Animation de l'historique Git (Gource)** : [Voir la vidéo Gource sur YouTube](https://youtu.be/B42ykq9RFxI)
+
+
 ## Auteurs : 
     - RAVALISON Jeremie  45001523
     - POUNIANDY Rajan  45002281
