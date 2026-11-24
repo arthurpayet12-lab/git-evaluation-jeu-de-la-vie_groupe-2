@@ -47,8 +47,78 @@ gource --version
 ffmpeg -version
 ```
 
-## Exécution : 
-- Plusieurs exemples d'utilisation de votre programme et les sorties attendues, comme ce qui est fait dans ce document ;
+## Exécution
+
+Voici plusieurs exemples d'utilisation de notre programme illustrant les différents modes de fonctionnement et les sorties attendues.
+
+### 1. Simulation par défaut (génération d'images)
+
+Sans aucun argument, le programme utilise les valeurs par défaut (grille aléatoire de 10x10, 20 itérations, graine 42) et génère **21 images PNG** dans le dossier `outputs/` :
+
+```bash
+python3 main.py
+```
+
+**Sortie console attendue :**
+```text
+Generation of 21 images in directory outputs
+```
+
+### 2. Simulation avec paramètres personnalisés
+
+Pour générer 201 images (de `grid_0000.png` à `grid_0200.png`) avec une grille de 50 cellules par côté et une graine fixée à `4200` :
+
+```bash
+python3 main.py -n 50 -m 200 -s 4200
+```
+
+**Sortie console attendue :**
+```text
+Generation of 201 images in directory outputs
+```
+
+### 3. Évolution d'une grille lue sur l'entrée standard (STDIN) en mode texte
+
+En fournissant une grille via un pipe Unix avec `-t text`, aucune image n'est créée : seule la dernière génération demandée est affichée sur la sortie standard (`STDOUT`).
+
+Exemple pour calculer 1 itération avec les conditions aux limites fixes (par défaut) :
+
+```bash
+cat tests/matrix3/input.txt | python3 main.py -m 1 -t text
+```
+
+**Sortie console attendue :**
+```text
+iteration: 1
+0 1 0
+0 0 1
+0 1 0
+```
+
+### 4. Grille avec conditions aux limites périodiques (`-p`)
+
+L'option `-p` ou `--periodic` replie la grille sur elle-même (forme de tore). Pour la même grille que ci-dessus, le résultat est différent :
+
+```bash
+cat tests/matrix3/input.txt | python3 main.py -m 1 -p -t text
+```
+
+**Sortie console attendue :**
+```text
+iteration: 1
+0 0 0
+0 0 0
+0 0 0
+```
+
+### 5. Lancement des tests automatiques
+
+Pour vérifier la conformité des options de la ligne de commande et la validité algorithmique du jeu :
+
+```bash
+sh check_script_options.sh
+sh check_tests.sh
+```
 
 ## Arguments : 
 
