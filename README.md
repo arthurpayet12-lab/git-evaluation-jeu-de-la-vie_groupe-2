@@ -91,4 +91,15 @@ Les liens YouTube vers les deux vidéos :
     - BOYER John-Lucas  46008228
     - MAILLOT-CADET Enzo  45001188
 ## Liens utiles
-  - : Une liste de ressources en ligne qui vous a été utile pour réaliser ce projet. Cette liste doit être sous la même forme que la section [Liens utiles](#liens-utiles) de ce document.
+- [Sujet du projet](README-consigne.md) : consignes et barème de l'évaluation,
+- [Jeu de la vie](https://fr.wikipedia.org/wiki/Jeu_de_la_vie) : présentation des règles du jeu de Conway,
+- [Documentation argparse](https://docs.python.org/fr/3/library/argparse.html) : analyse des arguments d'un script Python,
+- [Documentation random](https://docs.python.org/fr/3/library/random.html) : génération de grilles aléatoires reproductibles,
+- [Documentation sys](https://docs.python.org/fr/3/library/sys.html) : lecture de `STDIN` et écriture sur `STDERR`,
+- [Pipeline (Unix)](https://en.wikipedia.org/wiki/Pipeline_(Unix)) : description du pipe,
+- [Bien nommer ses commits](https://buzut.net/cours/versioning-avec-git/bien-nommer-ses-commits) : conventions des messages de commit,
+- [Documentation officielle de git rebase](https://git-scm.com/book/fr/v2/Les-branches-avec-Git-Rebaser-Rebasing) : fonctionnement du *rebase*,
+- [Workshop 3 : rebase et historique final](https://github.com/frozar/git-workshop-3) : organisation Git attendue pour ce projet,
+- [Documentation ffmpeg](https://ffmpeg.org/documentation.html) : installation et utilisation de `ffmpeg`,
+- [Site officiel de Gource](https://gource.io/) : présentation et téléchargement de Gource,
+- [Installation de WSL](https://learn.microsoft.com/fr-fr/windows/wsl/install) : procédure officielle pour Windows.
