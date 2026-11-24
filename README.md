@@ -83,7 +83,7 @@ Le programme `main.py` accepte plusieurs options en ligne de commande, disponibl
 ## Vidéos : 
 Les liens YouTube vers les deux vidéos :
   - [Simulation du jeu de la vie](https://youtu.be/ELl9sex1T-c?si=cgpLcRMOoOI2xNSa)
-  - une vidéo Gource représentant l'évolution de votre dépôt et reflétant un véritable travail de groupe ;
+  - [Jeu de la vie - Gource] (https://youtu.be/B42ykq9RFxI?si=5vQbvno0Wo3IV5PA)
 ## Auteurs : 
     - RAVALISON Jeremie  45001523
     - POUNIANDY Rajan  45002281
